@@ -1,0 +1,6 @@
+pytorch_lightning==1.6.5
+rich
+prefetch_generator
+albumentations
+pytorch-lightning-bolts
+timm
