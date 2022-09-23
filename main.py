@@ -93,15 +93,15 @@ class LitCassava(pl.LightningModule):
         return loss
 
 
-if __name__ == "__main__":
+def main():
     ## network
     # network = network.to(device)
     transform = vision_transforms.transform_3
 
-    train_loader, val_loader = ap.create_dataloader("./data", transform)
+    train_loader, val_loader = ap.create_dataloader("./data", transform,transform)
 
     model = resnet.ResNet(config.parameter['in_channel'],
-                               config.parameter['num_classes'])
+                          config.parameter['num_classes'])
 
     lit_model = LitCassava(model)
 
@@ -126,6 +126,7 @@ if __name__ == "__main__":
         logger=logger,
         weights_summary='top'
     )
+
     trainer.fit(lit_model, 
-    train_loader, 
-    val_loader)
+                train_loader, 
+                val_loader)

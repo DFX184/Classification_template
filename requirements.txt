@@ -4,3 +4,4 @@ prefetch_generator
 albumentations
 pytorch-lightning-bolts
 timm
+efficientnet_pytorch vit_pytorch
